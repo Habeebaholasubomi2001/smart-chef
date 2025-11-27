@@ -10,6 +10,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-yellow-green-50: #f2fbe9;
+  --color-yellow-green-100: #e5f7d4;
+  --color-yellow-green-200: #cbefa9;
+  --color-yellow-green-300: #b1e77e;
+  --color-yellow-green-400: #97df53;
+  --color-yellow-green-500: #7dd728;
+  --color-yellow-green-600: #64ac20;
+  --color-yellow-green-700: #4b8118;
+  --color-yellow-green-800: #325610;
+  --color-yellow-green-900: #192b08;
+  --color-yellow-green-950: #111e06;
 }
 
 @media (prefers-color-scheme: dark) {
