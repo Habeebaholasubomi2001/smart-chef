@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Optional: you can set environment variables here for local testing, but
+# it's recommended to set sensitive keys in the Netlify UI under Site > Settings > Environment.
+# [build.environment]
+#   NODE_VERSION = "20"
