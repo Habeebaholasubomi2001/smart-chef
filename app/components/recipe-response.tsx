@@ -9,6 +9,12 @@ interface RecipeResponseProps {
   isLoading: boolean;
 }
 
+type CodeRendererProps = {
+  node?: any;
+  inline?: boolean;
+} & React.HTMLAttributes<HTMLElement>;
+
+
 export default function RecipeResponse({
   markdown,
   fallback,
@@ -117,12 +123,12 @@ export default function RecipeResponse({
             p: ({ node, ...props }) => (
               <p className="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed" {...props} />
             ),
-            code: ({ node, inline, ...props }) => (
-              inline ? (
-                <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-sm text-gray-900 dark:text-gray-100 font-mono" {...props} />
-              ) : (
-                <code className="block bg-gray-100 dark:bg-gray-700 p-4 rounded-lg overflow-x-auto text-sm text-gray-900 dark:text-gray-100 font-mono mb-4" {...props} />
-              )
+            code: ({ node, inline, ...props }: CodeRendererProps) => (
+            inline ? (
+            <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded" {...props} />
+             ) : (
+              <pre className="my-4 overflow-auto" {...props}><code>{String(props.children)}</code></pre>
+            )
             ),
             pre: ({ node, ...props }) => (
               <pre className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg overflow-x-auto mb-4" {...props} />
